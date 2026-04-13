@@ -1,4 +1,4 @@
-describre('Massa de testes inscrição newsletter', () => {
+describe('Massa de testes inscrição newsletter', () => {
     beforeEach(() => {
         cy.visit('https://automationexercise.com/')
         cy.get('.logo').should('be.visible')
@@ -10,7 +10,8 @@ describre('Massa de testes inscrição newsletter', () => {
 
         cy.get('#susbscribe_email').type('teste@teste.teste.com.br')
         cy.get('#subscribe').click()
-        cy.get('.alert-success').should('be visible')
+        cy.wait(500)
+        cy.get('.alert-success').should('be.visible')
     })
 
     it('11 - Verify Subscription in Cart page', () => {
@@ -21,6 +22,7 @@ describre('Massa de testes inscrição newsletter', () => {
 
         cy.get('#susbscribe_email').type('teste@teste.teste.com.br')
         cy.get('#subscribe').click()
-        cy.get('.alert-success').should('be visible')
+        cy.wait(500)
+        cy.get('.alert-success').should('be.visible')
     })
 })

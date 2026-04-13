@@ -1,4 +1,4 @@
-describre('Massa de testes do finalização de compras', () => {
+describe('Massa de testes do finalização de compras', () => {
     beforeEach(() => {
         cy.visit('https://automationexercise.com/')
         cy.get('.logo').should('be.visible')
@@ -15,12 +15,13 @@ describre('Massa de testes do finalização de compras', () => {
 
         cy.get('.product-overlay .add-to-cart').eq(3).click({force: true})
         cy.get('.modal-content').should('be.visible')
-        cy.get('a[href="/view_cart"]').click()
+        cy.get('.modal-body').find('a[href="/view_cart"]').click()
         cy.get('#cart_items').should('be.visible')
 
         cy.get('.check_out').click()
         cy.get('.modal-content').should('be.visible')
         cy.contains('a', 'Register / Login')
+        cy.get('.modal-body').find('a[href="/login"]').click()
 
         cy.get('[data-qa="signup-name"]').type("Victor")
         cy.get('[data-qa="signup-email"]').type("victor.test@email.com")
@@ -51,7 +52,7 @@ describre('Massa de testes do finalização de compras', () => {
         cy.get('[data-qa="continue-button"]').click()
         cy.contains('a', 'Logged in as').should('be.visible')
 
-        cy.get('a[href="/view_cart"]').click()
+        cy.get('li > a[href="/view_cart"]').click()
         cy.get('.check_out').click()
 
         cy.contains('h3', 'Your delivery address').should('be.visible')
@@ -67,7 +68,8 @@ describre('Massa de testes do finalização de compras', () => {
         cy.get('[data-qa="expiry-month"]').type('01')
         cy.get('[data-qa="expiry-year"]').type('2060')
         cy.get('[data-qa="pay-button"]').click()
-        cy.get('.alert-success').should('be.visible')
+        cy.wait(1000)
+        cy.get('[data-qa="order-placed"]').should('be.visible')
 
         cy.get('a[href="/delete_account"]').click()
         cy.get('[data-qa="account-deleted"]').should('be.visible')
@@ -118,11 +120,10 @@ describre('Massa de testes do finalização de compras', () => {
 
         cy.get('.product-overlay .add-to-cart').eq(3).click({force: true})
         cy.get('.modal-content').should('be.visible')
-        cy.get('a[href="/view_cart"]').click()
+        cy.get('.modal-body').find('a[href="/view_cart"]').click()
         cy.get('#cart_items').should('be.visible')
 
         cy.get('.check_out').click()
-        cy.get('.modal-content').should('be.visible')
 
         cy.contains('h3', 'Your delivery address').should('be.visible')
         cy.contains('h3', 'Your billing address').should('be.visible')
@@ -137,7 +138,8 @@ describre('Massa de testes do finalização de compras', () => {
         cy.get('[data-qa="expiry-month"]').type('01')
         cy.get('[data-qa="expiry-year"]').type('2060')
         cy.get('[data-qa="pay-button"]').click()
-        cy.get('.alert-success').should('be.visible')
+        cy.wait(1000)
+        cy.get('[data-qa="order-placed"]').should('be.visible')
 
         cy.get('a[href="/delete_account"]').click()
         cy.get('[data-qa="account-deleted"]').should('be.visible')
@@ -164,11 +166,10 @@ describre('Massa de testes do finalização de compras', () => {
 
         cy.get('.product-overlay .add-to-cart').eq(3).click({force: true})
         cy.get('.modal-content').should('be.visible')
-        cy.get('a[href="/view_cart"]').click()
+        cy.get('.modal-body').find('a[href="/view_cart"]').click()
         cy.get('#cart_items').should('be.visible')
 
         cy.get('.check_out').click()
-        cy.get('.modal-content').should('be.visible')
 
         cy.contains('h3', 'Your delivery address').should('be.visible')
         cy.contains('h3', 'Your billing address').should('be.visible')
@@ -183,7 +184,8 @@ describre('Massa de testes do finalização de compras', () => {
         cy.get('[data-qa="expiry-month"]').type('01')
         cy.get('[data-qa="expiry-year"]').type('2060')
         cy.get('[data-qa="pay-button"]').click()
-        cy.get('.alert-success').should('be.visible')
+        cy.wait(1000)
+        cy.get('[data-qa="order-placed"]').should('be.visible')
     })
 
     it('23 - Verify address details in checkout page', () => {
@@ -221,25 +223,28 @@ describre('Massa de testes do finalização de compras', () => {
         cy.contains('a', 'Logged in as').should('be.visible')
 
         cy.get('.product-overlay .add-to-cart').eq(0).click({force: true})
+        cy.wait(5000)
         cy.get('.modal-content').should('be.visible')
         cy.get('.close-modal').click()
 
         cy.get('.product-overlay .add-to-cart').eq(1).click({force: true})
+        cy.wait(5000)
         cy.get('.modal-content').should('be.visible')
         cy.get('.close-modal').click()
 
         cy.get('.product-overlay .add-to-cart').eq(3).click({force: true})
+        cy.wait(5000)
         cy.get('.modal-content').should('be.visible')
-        cy.get('a[href="/view_cart"]').click()
+        cy.get('.modal-body').find('a[href="/view_cart"]').click()
         cy.get('#cart_items').should('be.visible')
 
         cy.get('.check_out').click()
 
-        cy.get('#address_delivery').should('contain', 'Victor Augusto')
-        cy.get('#address_delivery').should('contain', 'Rua Teste do teste, 541')
-        cy.get('#address_delivery').should('contain', 'Teste São Paulo 13253-700')
-        cy.get('#address_delivery').should('contain', 'Canada')
-        cy.get('#address_delivery').should('contain', '11223344556')
+        cy.get('.address_firstname').should('contain', 'Victor Augusto')
+        cy.get('.address_address1').should('contain', 'Rua Teste do teste, 541')
+        cy.get('.address_city').should('contain', '13253-700')
+        cy.get('.address_country_name').should('contain', 'Canada')
+        cy.get('.address_phone').should('contain', '+5511954674567')
 
         cy.get('a[href="/delete_account"]').click()
         cy.get('[data-qa="account-deleted"]').should('be.visible')
@@ -257,12 +262,12 @@ describre('Massa de testes do finalização de compras', () => {
 
         cy.get('.product-overlay .add-to-cart').eq(3).click({force: true})
         cy.get('.modal-content').should('be.visible')
-        cy.get('a[href="/view_cart"]').click()
+        cy.get('.modal-body').find('a[href="/view_cart"]').click()
         cy.get('#cart_items').should('be.visible')
 
         cy.get('.check_out').click()
         cy.get('.modal-content').should('be.visible')
-        cy.contains('a', 'Register / Login')
+        cy.contains('a', 'Register / Login').click()
 
         cy.get('[data-qa="signup-name"]').type("Victor")
         cy.get('[data-qa="signup-email"]').type("victor.test@email.com")
@@ -293,7 +298,7 @@ describre('Massa de testes do finalização de compras', () => {
         cy.get('[data-qa="continue-button"]').click()
         cy.contains('a', 'Logged in as').should('be.visible')
 
-        cy.get('a[href="/view_cart"]').click()
+        cy.get('li > a[href="/view_cart"]').click()
         cy.get('.check_out').click()
 
         cy.contains('h3', 'Your delivery address').should('be.visible')
@@ -309,9 +314,9 @@ describre('Massa de testes do finalização de compras', () => {
         cy.get('[data-qa="expiry-month"]').type('01')
         cy.get('[data-qa="expiry-year"]').type('2060')
         cy.get('[data-qa="pay-button"]').click()
-        cy.get('.alert-success').should('be.visible')
+        cy.get('[data-qa="order-placed"]').should('be.visible')
 
-        cy.get('a[href="/download_invoice/500"]').click()
+        cy.contains('a', 'Download Invoice').click()
 
         cy.readFile('cypress/downloads/invoice.txt', { timeout: 15000 }).should('exist')
         cy.get('[data-qa="continue-button"]').click()

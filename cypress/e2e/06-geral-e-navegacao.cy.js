@@ -1,4 +1,4 @@
-describre('Massa de testes do finalização de compras', () => {
+describe('Massa de testes do finalização de compras', () => {
     beforeEach(() => {
         cy.visit('https://automationexercise.com/')
         cy.get('.logo').should('be.visible')
@@ -23,20 +23,22 @@ describre('Massa de testes do finalização de compras', () => {
     })
   
     it('07 - Verify Test Cases Page', () => {
-        cy.get('a[href="/test_cases"]').click()
+        cy.get('li > a[href="/test_cases"]').click()
         cy.contains('h2', 'Test Cases').should('be.visible')
     })
 
-    it('25 - Verify Scroll Up using Arrow button and Scroll Down functionality', () => {
+    it.only('25 - Verify Scroll Up using Arrow button and Scroll Down functionality', () => {
         cy.scrollTo('bottom')
         cy.contains('h2', 'Subscription').should('be.visible')
+        cy.wait(3000)
 
-        cy.get('#scrollUP').click()
+        cy.get('a[href="#top"]').click()
         cy.contains('h2', 'Full-Fledged practice website for Automation Engineers').should('be.visible')
     })
 
     it('26 - Verify Scroll Up without Arrow button and Scroll Down functionality', () => {
         cy.scrollTo('bottom')
+        cy.wait(3000)
         cy.contains('h2', 'Subscription').should('be.visible')
 
         cy.scrollTo('top')
