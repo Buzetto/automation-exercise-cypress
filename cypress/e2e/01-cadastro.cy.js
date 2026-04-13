@@ -5,7 +5,7 @@ describe ("Testes de cadastro", () => {
         cy.get('.logo').should('be.visible')
     })
 
-    it.only("TC_01 - Register User", () => {
+    it("TC_01 - Register User", () => {
         cy.get('a[href="/login"]').click()
         cy.contains('h2', 'New User Signup!').should('be.visible')
 
@@ -48,8 +48,8 @@ describe ("Testes de cadastro", () => {
         cy.get('a[href="/login"]').click()
         cy.contains('h2', 'Login to your account').should('be.visible')
 
-        cy.get('[data-qa="login-email"]').type('teste@teste.teste.com.br')
-        cy.get('[data-qa="login-password"]').type('Senha123')
+        cy.get('[data-qa="login-email"]').type(Cypress.env('permanent_account').email)
+        cy.get('[data-qa="login-password"]').type(Cypress.env('permanent_account').password)
 
         cy.get('[data-qa="login-button"]').click()
         cy.contains('a', 'Logged in as').should('be.visible')
@@ -70,8 +70,8 @@ describe ("Testes de cadastro", () => {
         cy.get('a[href="/login"]').click()
         cy.contains('h2', 'Login to your account').should('be.visible')
 
-        cy.get('[data-qa="login-email"]').type('teste@teste.teste.com.br')
-        cy.get('[data-qa="login-password"]').type('Senha123')
+        cy.get('[data-qa="login-email"]').type(Cypress.env('permanent_account').email)
+        cy.get('[data-qa="login-password"]').type(Cypress.env('permanent_account').password)
         cy.get('[data-qa="login-button"]').click()
         cy.contains('a', 'Logged in as').should('be.visible')
 
@@ -83,8 +83,8 @@ describe ("Testes de cadastro", () => {
         cy.get('a[href="/login"]').click()
         cy.contains('h2', 'New User Signup!').should('be.visible')
 
-        cy.get('[data-qa="signup-name"]').type("Victor")
-        cy.get('[data-qa="signup-email"]').type("teste@teste.teste.com.br")
+        cy.get('[data-qa="signup-name"]').type(Cypress.env('permanent_account').name)
+        cy.get('[data-qa="signup-email"]').type(Cypress.env('permanent_account').email)
         cy.get('[data-qa="signup-button"]').click()
         cy.contains('p', 'Email Address already exist!').should('be.visible')
     })
