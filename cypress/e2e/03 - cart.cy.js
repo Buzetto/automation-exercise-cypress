@@ -66,8 +66,8 @@ describe('Massa de testes do carrinho de compras', () => {
         cy.get('.modal-body').find('a[href="/view_cart"]').click()
 
         cy.get('li > a[href="/login"]').click()
-        cy.get('[data-qa="login-email"]').type('teste@teste.teste.com.br')
-        cy.get('[data-qa="login-password"]').type('Senha123')
+        cy.get('[data-qa="login-email"]').type(Cypress.env('permanent_account').email)
+        cy.get('[data-qa="login-password"]').type(Cypress.env('permanent_account').password)
         cy.get('[data-qa="login-button"]').click()
 
         cy.get('li > a[href="/view_cart"]').click()
