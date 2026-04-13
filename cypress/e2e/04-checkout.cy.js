@@ -4,7 +4,7 @@ describe('Massa de testes do finalização de compras', () => {
         cy.get('.logo').should('be.visible')
     })
 
-    it('14 - Place Order: Register while Checkout', () => {
+    it('TC_14 - Place Order: Register while Checkout', () => {
         cy.get('.product-overlay .add-to-cart').eq(0).click({force: true})
         cy.get('.modal-content').should('be.visible')
         cy.get('.close-modal').click()
@@ -76,7 +76,7 @@ describe('Massa de testes do finalização de compras', () => {
         cy.get('[data-qa="continue-button"]').click()
     })
 
-    it('15 - Place Order: Register before Checkout', () => {
+    it('TC_15 - Place Order: Register before Checkout', () => {
         cy.get('a[href="/login"]').click()
         cy.contains('h2', 'New User Signup!').should('be.visible')
 
@@ -146,7 +146,7 @@ describe('Massa de testes do finalização de compras', () => {
         cy.get('[data-qa="continue-button"]').click()
     })
 
-    it('16 - Place Order: Login before Checkout', () => {
+    it('TC_16 - Place Order: Login before Checkout', () => {
         cy.get('a[href="/login"]').click()
         cy.contains('h2', 'Login to your account').should('be.visible')
 
@@ -188,7 +188,7 @@ describe('Massa de testes do finalização de compras', () => {
         cy.get('[data-qa="order-placed"]').should('be.visible')
     })
 
-    it('23 - Verify address details in checkout page', () => {
+    it('TC_23 - Verify address details in checkout page', () => {
         cy.get('a[href="/login"]').click()
         cy.contains('h2', 'New User Signup!').should('be.visible')
 
@@ -251,7 +251,7 @@ describe('Massa de testes do finalização de compras', () => {
         cy.get('[data-qa="continue-button"]').click()
     })
 
-    it('24 - Download Invoice after purchase order', () => {
+    it('TC_24 - Download Invoice after purchase order', () => {
         cy.get('.product-overlay .add-to-cart').eq(0).click({force: true})
         cy.get('.modal-content').should('be.visible')
         cy.get('.close-modal').click()

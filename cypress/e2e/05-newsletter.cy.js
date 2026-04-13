@@ -4,7 +4,7 @@ describe('Massa de testes inscrição newsletter', () => {
         cy.get('.logo').should('be.visible')
     })
 
-    it('10 - Verify Subscription in home page', () => {
+    it('TC_10 - Verify Subscription in home page', () => {
         cy.scrollTo('bottom')
         cy.contains('h2', 'Subscription').should('be.visible')
 
@@ -14,7 +14,7 @@ describe('Massa de testes inscrição newsletter', () => {
         cy.get('.alert-success').should('be.visible')
     })
 
-    it('11 - Verify Subscription in Cart page', () => {
+    it('TC_11 - Verify Subscription in Cart page', () => {
         cy.get('a[href="/products"]').click()
 
         cy.scrollTo('bottom')

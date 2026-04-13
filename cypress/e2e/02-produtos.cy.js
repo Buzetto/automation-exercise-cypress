@@ -4,7 +4,7 @@ describe ("Testes sobre os produtos", () => {
         cy.get('.logo').should('be.visible')
     })
 
-    it("08 - Verify All Products and product detail page", () => {
+    it("TC_08 - Verify All Products and product detail page", () => {
         cy.get('a[href="/products"]').click()
         cy.url().should('include', '/products')
         cy.contains('h2', 'All Products').should('be.visible')
@@ -21,7 +21,7 @@ describe ("Testes sobre os produtos", () => {
         cy.contains('b', 'Brand:').should('be.visible')
     })
 
-    it("09 - Search Product", () => {
+    it("TC_09 - Search Product", () => {
         cy.get('a[href="/products"]').click()
         cy.url().should('include', '/products')
         cy.get('#search_product').type('Blue Top')
@@ -31,7 +31,7 @@ describe ("Testes sobre os produtos", () => {
         cy.contains('p', 'Blue Top').should('be.visible')
     })
 
-    it("18 - View Category Products", () => {
+    it("TC_18 - View Category Products", () => {
         cy.contains('h2', 'Category').should('be.visible')
         cy.get('a[href="#Women"]').click()
         cy.get('a[href="/category_products/1"]').click()
@@ -41,7 +41,7 @@ describe ("Testes sobre os produtos", () => {
         cy.contains('h2', 'Men - Tshirts Products').should('be.visible')
     })
 
-    it('19 - View & Cart Brand Products', () => {
+    it('TC_19 - View & Cart Brand Products', () => {
         cy.get('a[href="/products"]').click()
         cy.contains('h2', 'Brands').should('be.visible')
         cy.get('a[href="/brand_products/Polo"]').click()
@@ -51,7 +51,7 @@ describe ("Testes sobre os produtos", () => {
         cy.get('.productinfo').should('be.visible')
     })
 
-    it('21 - Add reviw on product', () => {
+    it('TC_21 - Add reviw on product', () => {
         cy.get('a[href="/products"]').click()
         cy.contains('h2', 'All Products').should('be.visible')
         cy.get('a[href="/product_details/1"]').click()
@@ -63,7 +63,7 @@ describe ("Testes sobre os produtos", () => {
         cy.contains('span', 'Thank you for your review.', { timeout: 10000 }).should('be.visible')
     })
 
-    it('22 - Add to cart form Recommended items', () => {
+    it('TC_22 - Add to cart form Recommended items', () => {
         cy.contains('h2', 'recommended items').scrollIntoView().should('be.visible')
         cy.get('.recommended_items').find('a[data-product-id="3"]').click({force: true})
         cy.contains('a', 'View Cart').click()

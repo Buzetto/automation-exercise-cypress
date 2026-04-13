@@ -4,7 +4,7 @@ describe('Massa de testes do finalização de compras', () => {
         cy.get('.logo').should('be.visible')
     })
 
-    it('06 - Contact Us Form', () => {
+    it('TC_06 - Contact Us Form', () => {
         cy.get('a[href="/contact_us"]').click()
         cy.contains('h2', 'Get In Touch').should('be.visible')
 
@@ -22,12 +22,12 @@ describe('Massa de testes do finalização de compras', () => {
         cy.url().should('eq', 'https://automationexercise.com/')
     })
   
-    it('07 - Verify Test Cases Page', () => {
+    it('TC_07 - Verify Test Cases Page', () => {
         cy.get('li > a[href="/test_cases"]').click()
         cy.contains('h2', 'Test Cases').should('be.visible')
     })
 
-    it.only('25 - Verify Scroll Up using Arrow button and Scroll Down functionality', () => {
+    it('TC_25 - Verify Scroll Up using Arrow button and Scroll Down functionality', () => {
         cy.scrollTo('bottom')
         cy.contains('h2', 'Subscription').should('be.visible')
         cy.wait(3000)
@@ -36,7 +36,7 @@ describe('Massa de testes do finalização de compras', () => {
         cy.contains('h2', 'Full-Fledged practice website for Automation Engineers').should('be.visible')
     })
 
-    it('26 - Verify Scroll Up without Arrow button and Scroll Down functionality', () => {
+    it('TC_26 - Verify Scroll Up without Arrow button and Scroll Down functionality', () => {
         cy.scrollTo('bottom')
         cy.wait(3000)
         cy.contains('h2', 'Subscription').should('be.visible')

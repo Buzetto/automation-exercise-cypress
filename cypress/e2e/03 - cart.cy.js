@@ -4,7 +4,7 @@ describe('Massa de testes do carrinho de compras', () => {
         cy.get('.logo').should('be.visible')
     })
 
-    it("12 - Add Producsts in Cart", () => {
+    it("TC_12 - Add Producsts in Cart", () => {
         cy.get('a[href="/products"]').click()
 
         cy.get('.product-overlay .add-to-cart').eq(0).click({force: true})
@@ -18,7 +18,7 @@ describe('Massa de testes do carrinho de compras', () => {
         cy.get('#product-2').should('be.visible')
     })
 
-    it("13 - Verify Product quantity in Cart", () => {
+    it("TC_13 - Verify Product quantity in Cart", () => {
         cy.get('a[href="/products"]').click()
         
         cy.get('a[href="/product_details/1"]').click()
@@ -32,7 +32,7 @@ describe('Massa de testes do carrinho de compras', () => {
         cy.get('.cart_quantity button').should('have.text', '4')
     })
 
-    it("17 - Remove Products From Cart", () => {
+    it("TC_17 - Remove Products From Cart", () => {
         cy.get('.product-overlay .add-to-cart').eq(0).click({force: true})
         cy.get('.modal-content').should('be.visible')
         cy.get('.close-modal').click()
@@ -53,7 +53,7 @@ describe('Massa de testes do carrinho de compras', () => {
         cy.get('#empty_cart').should('be.visible')
     })
 
-    it('20 - Search Products and Verify Cart After Login', () => {
+    it('TC_20 - Search Products and Verify Cart After Login', () => {
         cy.get('a[href="/products"]').click()
         cy.url().should('include', '/products')
 
