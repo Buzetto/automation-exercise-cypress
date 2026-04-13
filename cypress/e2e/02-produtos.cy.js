@@ -51,13 +51,13 @@ describe ("Testes sobre os produtos", () => {
         cy.get('.productinfo').should('be.visible')
     })
 
-    it('TC_21 - Add reviw on product', () => {
+    it('TC_21 - Add review on product', () => {
         cy.get('a[href="/products"]').click()
         cy.contains('h2', 'All Products').should('be.visible')
         cy.get('a[href="/product_details/1"]').click()
         cy.get('a[href="#reviews"]').should('be.visible')
-        cy.get('#name').type("Victor")
-        cy.get('input[placeholder="Email Address"]').type("teste@teste.com")
+        cy.get('#name').type(Cypress.env('temporary_account').first_name)
+        cy.get('input[placeholder="Email Address"]').type(Cypress.env('temporary_account').email)
         cy.get('#review').type("Produto maravilhoso, com muita qualidade e extremamente confortável no corpo")
         cy.get('#button-review').click()
         cy.contains('span', 'Thank you for your review.', { timeout: 10000 }).should('be.visible')
