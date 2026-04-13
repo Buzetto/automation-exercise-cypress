@@ -1,6 +1,12 @@
 describe ("Testes sobre os produtos", () => {
-    beforeEach(() => {
-        cy.visit("https://automationexercise.com/")
+    let massa;
+
+    beforeEach (() => {
+        cy.fixture('test-data').then((dados) => {
+            massa = dados;
+        });
+
+        cy.visit('https://automationexercise.com/')
         cy.get('.logo').should('be.visible')
     })
 
@@ -56,8 +62,8 @@ describe ("Testes sobre os produtos", () => {
         cy.contains('h2', 'All Products').should('be.visible')
         cy.get('a[href="/product_details/1"]').click()
         cy.get('a[href="#reviews"]').should('be.visible')
-        cy.get('#name').type(Cypress.env('temporary_account').first_name)
-        cy.get('input[placeholder="Email Address"]').type(Cypress.env('temporary_account').email)
+        cy.get('#name').type(massa.temporary_account.first_name)
+        cy.get('input[placeholder="Email Address"]').type(massa.temporary_account.email)
         cy.get('#review').type("Produto maravilhoso, com muita qualidade e extremamente confortável no corpo")
         cy.get('#button-review').click()
         cy.contains('span', 'Thank you for your review.', { timeout: 10000 }).should('be.visible')

@@ -1,5 +1,11 @@
 describe('Massa de testes do finalização de compras', () => {
-    beforeEach(() => {
+    let massa;
+
+    beforeEach (() => {
+        cy.fixture('test-data').then((dados) => {
+            massa = dados;
+        });
+
         cy.visit('https://automationexercise.com/')
         cy.get('.logo').should('be.visible')
     })
