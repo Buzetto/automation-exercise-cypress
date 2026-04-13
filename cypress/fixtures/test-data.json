@@ -1,0 +1,39 @@
+{
+  "permanent_account": {
+        "email": "teste@teste.teste.com.br",
+        "password": "Senha123",
+        "name": "Victor",
+        "name_on_card": "Victor Augusto",
+        "card_number": "1111 2222 3333 4444",
+        "card_cvc": "123",
+        "card_expiry_month": "01",
+        "card_expiry_year": "2060"
+    },
+
+    "temporary_account": {
+        "email": "victor.teste@email.com",
+        "first_name": "Victor",
+        "last_name": "Augusto",
+        "birthday_day": "26",
+        "birthday_month": "May",
+        "birthday_year": "1990",
+        "password": "Senha123",
+        "company": "Empresa Teste",
+        "address": "Rua Teste do teste, 541",
+        "country": "Canada",
+        "state": "São Paulo",
+        "city": "Teste",
+        "zipcode": "13253-700",
+        "mobile_number": "+5511954674567",
+        "name_on_card": "Joao da Silva",
+        "card_number": "1111 2222 3333 4444",
+        "card_cvc": "123",
+        "card_expiry_month": "01",
+        "card_expiry_year": "2060"
+    },
+
+    "wrong_login": {
+        "email": "teste@ashdusahd.com",
+        "password": "asudhsakjfn"
+    }
+}
