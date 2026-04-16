@@ -37,33 +37,35 @@ Node.js instalado em sua máquina.
 Git instalado.
 
 **Passo 1: Clonar o repositório**
-Bash
+```Bash
 git clone [https://github.com/Buzetto/automation-exercise-cypress.git](https://github.com/Buzetto/automation-exercise-cypress.git)
 cd automation-exercise-cypress
-Passo 2: Instalar as dependências
-Bash
-npm install
-Passo 3: Configurar as Variáveis de Ambiente (Segurança)
-Por motivos de segurança e boas práticas, o arquivo contendo a senha do sistema não é versionado no GitHub. Para rodar os testes localmente, crie um arquivo chamado cypress.env.json na raiz do projeto contendo a seguinte estrutura:
+```
 
-JSON
+**Passo 2: Instalar as dependências**
+```Bash
+npm install
+```
+
+**Passo 3: Configurar as Variáveis de Ambiente (Segurança)**
+Por motivos de segurança e boas práticas, o arquivo contendo a senha do sistema não é versionado no GitHub. Para rodar os testes localmente, crie um arquivo chamado cypress.env.json na raiz do projeto contendo a seguinte estrutura:
+```JSON
 {
   "SENHA_SISTEMA": "InsiraASenhaAqui"
 }
-Passo 4: Executar os testes
+```
+
+**Passo 4: Executar os testes**
 Para abrir a interface gráfica nativa do Cypress e acompanhar os testes visualmente:
-
-Bash
+```Bash
 npx cypress open
-Para rodar todos os testes em modo "Headless" (em segundo plano, padrão utilizado em esteiras de CI/CD):
+```
 
-Bash
+Para rodar todos os testes em modo "Headless" (em segundo plano, padrão utilizado em esteiras de CI/CD):
+```Bash
 npx cypress run
+```
+
 👨‍💻 Autor
 Victor Augusto Buzetto Analista de Suporte Técnico em transição para Quality Assurance (QA) | Especialista em Testes Automatizados E2E
-
-🌐 Portfólio: [Link do seu Vercel aqui]
-
-💼 LinkedIn: [Seu link do LinkedIn aqui]
-
-📸 Instagram: [Seu @ do Instagram aqui]
+💼 LinkedIn: [[Seu link do LinkedIn aqui](https://www.linkedin.com/in/victoraugustobuzetto/)]
