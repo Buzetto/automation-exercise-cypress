@@ -28,14 +28,15 @@ cypress/
   ├── support/           # Comandos customizados (commands.js) e configurações globais
 cypress.config.js        # Configurações raiz do framework
 .gitignore               # Regras de segurança e exclusão de rastreio
+```
 
 ## 🚀 Como clonar e executar o projeto localmente
-Pré-requisitos
-Node.js instalado em sua máquina.
 
+**Pré-requisitos**
+Node.js instalado em sua máquina.
 Git instalado.
 
-Passo 1: Clonar o repositório
+**Passo 1: Clonar o repositório**
 Bash
 git clone [https://github.com/Buzetto/automation-exercise-cypress.git](https://github.com/Buzetto/automation-exercise-cypress.git)
 cd automation-exercise-cypress
