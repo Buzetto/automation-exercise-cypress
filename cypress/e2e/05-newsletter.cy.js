@@ -1,5 +1,11 @@
 describe('Massa de testes inscrição newsletter', () => {
-    beforeEach(() => {
+    let massa;
+
+    beforeEach (() => {
+        cy.fixture('test-data').then((dados) => {
+            massa = dados;
+        });
+
         cy.visit('https://automationexercise.com/')
         cy.get('.logo').should('be.visible')
     })
@@ -8,7 +14,7 @@ describe('Massa de testes inscrição newsletter', () => {
         cy.scrollTo('bottom')
         cy.contains('h2', 'Subscription').should('be.visible')
 
-        cy.get('#susbscribe_email').type('teste@teste.teste.com.br')
+        cy.get('#susbscribe_email').type(massa.permanent_account.email)
         cy.get('#subscribe').click()
         cy.wait(500)
         cy.get('.alert-success').should('be.visible')
@@ -20,7 +26,7 @@ describe('Massa de testes inscrição newsletter', () => {
         cy.scrollTo('bottom')
         cy.contains('h2', 'Subscription').should('be.visible')
 
-        cy.get('#susbscribe_email').type('teste@teste.teste.com.br')
+        cy.get('#susbscribe_email').type(massa.permanent_account.email)
         cy.get('#subscribe').click()
         cy.wait(500)
         cy.get('.alert-success').should('be.visible')

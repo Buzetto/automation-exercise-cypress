@@ -1,5 +1,11 @@
 describe('Massa de testes do finalização de compras', () => {
-    beforeEach(() => {
+    let massa;
+
+    beforeEach (() => {
+        cy.fixture('test-data').then((dados) => {
+            massa = dados;
+        });
+
         cy.visit('https://automationexercise.com/')
         cy.get('.logo').should('be.visible')
     })
@@ -8,8 +14,8 @@ describe('Massa de testes do finalização de compras', () => {
         cy.get('a[href="/contact_us"]').click()
         cy.contains('h2', 'Get In Touch').should('be.visible')
 
-        cy.get('[data-qa="name"]').type('Victor')
-        cy.get('[data-qa="email"]').type('teste@teste.teste.com.br')
+        cy.get('[data-qa="name"]').type(massa.permanent_account.name)
+        cy.get('[data-qa="email"]').type(massa.permanent_account.email)
         cy.get('[data-qa="subject"]').type('Dúvida sobre Automação')
         cy.get('[data-qa="message"]').type('Estou testando o upload de arquivos via Cypress.')
 

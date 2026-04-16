@@ -5,7 +5,6 @@
         "name": "Victor",
         "name_on_card": "Victor Augusto",
         "card_number": "1111 2222 3333 4444",
-        "card_cvc": "123",
         "card_expiry_month": "01",
         "card_expiry_year": "2060"
     },

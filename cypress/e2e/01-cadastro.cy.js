@@ -88,8 +88,8 @@ describe ("Testes de cadastro", () => {
         cy.get('a[href="/login"]').click()
         cy.contains('h2', 'New User Signup!').should('be.visible')
 
-        cy.get('[data-qa="signup-name"]').type(massa.permanent_account.email)
-        cy.get('[data-qa="signup-email"]').type(Cypress.env('system_password'))
+        cy.get('[data-qa="signup-name"]').type(massa.permanent_account.name)
+        cy.get('[data-qa="signup-email"]').type(massa.permanent_account.email)
         cy.get('[data-qa="signup-button"]').click()
         cy.contains('p', 'Email Address already exist!').should('be.visible')
     })
