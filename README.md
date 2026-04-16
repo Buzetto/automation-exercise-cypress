@@ -1,4 +1,4 @@
-# 🤖 Cypress E2E Automation - Automation Exercise
+# Cypress E2E Automation - Automation Exercise
 
 ![Cypress](https://img.shields.io/badge/-cypress-%23E5E5E5?style=for-the-badge&logo=cypress&logoColor=058a5e)
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
@@ -8,7 +8,7 @@ Este repositório contém a automação completa de testes End-to-End (E2E) para
 
 O objetivo principal deste projeto é demonstrar a aplicação de boas práticas de Quality Assurance (QA) em um ambiente realista, cobrindo 100% dos 26 casos de teste propostos pelo sistema, incluindo fluxos críticos de negócio como cadastro, checkout, manipulação de arquivos e validações dinâmicas.
 
-## 🎯 Destaques e Arquitetura do Projeto
+##  Destaques e Arquitetura do Projeto
 
 Este projeto foi construído pensando em escalabilidade e segurança de nível empresarial:
 
@@ -29,7 +29,7 @@ cypress.config.js        # Configurações raiz do framework
 .gitignore               # Regras de segurança e exclusão de rastreio
 ```
 
-## 🚀 Como clonar e executar o projeto localmente
+##  Como clonar e executar o projeto localmente
 
 **Pré-requisitos**
 Node.js instalado em sua máquina.
@@ -65,7 +65,7 @@ Para rodar todos os testes em modo "Headless" (em segundo plano, padrão utiliza
 npx cypress run
 ```
 
-👨‍💻 Autor
+## Autor
 Victor Augusto Buzetto Analista de Suporte Técnico em transição para Quality Assurance (QA)
 
 💼 LinkedIn: [[Seu link do LinkedIn aqui](https://www.linkedin.com/in/victoraugustobuzetto/)]
