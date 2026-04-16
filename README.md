@@ -67,5 +67,6 @@ npx cypress run
 ```
 
 👨‍💻 Autor
-Victor Augusto Buzetto Analista de Suporte Técnico em transição para Quality Assurance (QA) | Especialista em Testes Automatizados E2E
+Victor Augusto Buzetto Analista de Suporte Técnico em transição para Quality Assurance (QA)
+
 💼 LinkedIn: [[Seu link do LinkedIn aqui](https://www.linkedin.com/in/victoraugustobuzetto/)]
