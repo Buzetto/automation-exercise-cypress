@@ -16,7 +16,6 @@ Este projeto foi construído pensando em escalabilidade e segurança de nível e
 * **Arquitetura Segura (Segregação de Dados):**
     * **Fixtures (`cypress/fixtures/`):** Massa de dados não sensível (nomes e endereços fictícios) mapeada publicamente para facilitar o entendimento do fluxo de teste.
     * **Environment Variables (`cypress.env.json`):** Dados sensíveis (senhas do sistema) isolados e protegidos via `.gitignore`, garantindo segurança na integração com pipelines de CI/CD (ex: GitHub Actions).
-* **DRY & Custom Commands:** Utilização de comandos customizados no Cypress (`cypress/support/commands.js`) para centralizar lógicas repetitivas, como o fluxo de autenticação (Login), facilitando a manutenção futura.
 * **Manipulação de Arquivos:** Automação avançada para interceptar e validar arquivos baixados pelo navegador (`cy.readFile`), bem como o envio nativo de anexos (`.selectFile`).
 
 ## 📁 Estrutura de Diretórios
