@@ -1,6 +1,6 @@
 import data from '../fixtures/test-data.json'
 
-describe('Massa de testes do finalização de compras', () => {
+describe('Checkout Tests', () => {
     
     beforeEach (() => {
         cy.start()
@@ -14,7 +14,7 @@ describe('Massa de testes do finalização de compras', () => {
         cy.deleteAccount()
     })
 
-    it('TC_15 - Place Order: Register before Checkout', () => {
+    it.only('TC_15 - Place Order: Register before Checkout', () => {
         cy.registerAccount(data.temporary_account)
         cy.insertProductsInCart()
         cy.continueCheckoutAfterRegister(data.temporary_account)

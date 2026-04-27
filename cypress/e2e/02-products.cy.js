@@ -1,6 +1,6 @@
 import data from '../fixtures/test-data.json'
 
-describe ("Testes sobre os produtos", () => {
+describe ("Products Tests", () => {
     
     beforeEach (() => {
         cy.start()

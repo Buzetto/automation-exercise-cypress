@@ -1,6 +1,6 @@
 import data from '../fixtures/test-data.json'
 
-describe('Massa de testes inscrição newsletter', () => {
+describe('Newsletter Tests', () => {
     
     beforeEach (() => {
         cy.start()

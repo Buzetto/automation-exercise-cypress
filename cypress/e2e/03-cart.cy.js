@@ -1,6 +1,6 @@
 import data from '../fixtures/test-data.json'
 
-describe('Massa de testes do carrinho de compras', () => {
+describe('Cart Tests', () => {
     
     beforeEach (() => {
         cy.start()

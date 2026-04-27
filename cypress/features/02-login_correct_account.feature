@@ -7,7 +7,7 @@ Funcionalidade: Acessar a conta com o email e senha correta
         Dado que estou na página inicial do Automation Exercise
         E verifico que a página inicial está visível
         Quando clico no botão "Signup / Login"
-        E verifico que a sessão "Login to your account" esta visível
+        E verifico que a seção "Login to your account" esta visível
         Quando digito o email e a senha corretamente
         E clico no botão de Login
         Então verifico que a mensagem "Logged in as username" está visível

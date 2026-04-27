@@ -3,7 +3,7 @@ Funcionalidade: Acessar a conta com o email e senha incorretos
     Quero poder acessar minha conta
     Para conseguir realizar compras na plataforma
 
-    Cenário: Acessar com a conta correta, email e senha
+    Cenário: Tentar acessar com a conta correta, email e senha
         Dado que estou na página inicial do Automation Exercise
         E verifico que a página inicial está visível
         Quando clico no botão "Signup / Login"
