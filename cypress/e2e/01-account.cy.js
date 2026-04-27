@@ -1,4 +1,4 @@
-import data from '../../cypress/fixtures/test-data.json'
+import data from '../fixtures/test-data.json'
 
 describe ("Login and Register Account", () => {
 
